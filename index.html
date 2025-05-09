@@ -1,12 +1,307 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="style.css">
-</head>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternativ Axtarış Sistemi</title>
+    
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+    }
+
+    .container {
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    input {
+        padding: 12px 20px;
+        width: 70%;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 25px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #079000;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        background-color: #e0e0e0;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+    }
+    img{
+        height: 10rem;
+        padding: null;
+        margin: null;
+    }
+    
+    footer{
+        margin: 3rem;
+        padding: 1%;
+        border-radius: 20px;
+        color: black ;
+        margin-inline-start: 1rem;
+        margin-inline-end: 1rem;
+        background:#079000;
+    }
+</style>
+
+  
+<style>
+        @font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_medium_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
+        }
+</style></head>
 <body>
+   
+    <div class="container">
+    
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Axtarış et..." required="">
+            <button type="submit">Axtar</button>
+        </form>
+        <ul id="resultList"></ul>
+    </div>
+    <footer>  <center>© <a href="/"> By Alternativ Service</a></center></footer>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
 
-</body>
-</html>
+    <script>
+       document.getElementById("searchForm").addEventListener("submit", function(event) {
+    event.preventDefault();  // Formun təkrarlanmasının qarşısını alır
+
+    var query = document.getElementById("searchInput").value;  // İstifadəçinin axtarış sorğusu
+    
+    // URL-ə axtarış sorğusunu əlavə edirik
+    window.history.pushState({ query: query }, '', `?search=${encodeURIComponent(query)}`);
+
+    var results = [
+        {
+            title: `YouTube - ${query}`,
+            url: `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`,
+            description: "YouTube'da videolar və məlumatlar."
+        },
+        {
+            title: `Facebook - ${query}`,
+            url: `https://www.facebook.com/search/top?q=${encodeURIComponent(query)}`,
+            description: "Facebook'dan hesab və məlumatlar."
+        },
+        {
+            title: `Wikipedia - ${query}`,
+            url: `https://tr.wikipedia.org/wiki/${encodeURIComponent(query)}`,
+            description: "Wikipedia'dan məlumat."
+        },
+        {
+            title: `Stack Overflow - ${query}`,
+            url: `https://stackoverflow.com/search?q=${encodeURIComponent(query)}`,
+            description: "Stack Overflow'da sorular və cavablar."
+        },
+        {
+            title: `MDN Web Docs - ${query}`,
+            url: `https://developer.mozilla.org/en-US/search?q=${encodeURIComponent(query)}`,
+            description: "Veb Texnalogiyaları."
+        },
+        {
+            title: `GitHub - ${query}`,
+            url: `https://github.com/search?q=${encodeURIComponent(query)}`,
+            description: "GitHub'da layihələr və kodlar."
+        },
+        {
+            title: `Yandex - ${query}`,
+            url: `https://yandex.com/search/?text=${encodeURIComponent(query)}`,
+            description: "Yandex browser'dən məlumat."
+        }, 
+        {
+            title:`Google - ${query}`,
+            url: `https://www.google.com/search?q=${encodeURIComponent(query)}`,
+            description: "Google axtarış sistemi."
+        },
+        // Xəbər saytları əlavə edirik
+        {
+            title: "BBC News - Xəbərlər",
+            url: "https://www.bbc.com/news",
+            description: "BBC-dən son xəbərlər."
+        },
+        {
+            title: "CNN - Xəbərlər",
+            url: "https://edition.cnn.com",
+            description: "CNN-in ən son xəbərləri."
+        },
+        {
+            title: `Reuters - Xəbərlər`,
+            url: "https://www.reuters.com",
+            description: "Reuters-dən beynəlxalq xəbərlər."
+        },
+        {
+            title: `The New York Times - Xəbərlər`,
+            url: "https://www.nytimes.com",
+            description: "The New York Times-dan xəbərlər."
+        },
+        {
+            title: `Al Jazeera - Xəbərlər`,
+            url: "https://www.aljazeera.com",
+            description: "Al Jazeera-dan beynəlxalq xəbərlər."
+        },
+        {
+            title: `Azərtac - Azərbaycan Xəbərləri`,
+            url: "https://azertag.az",
+            description: "Azərbaycanın dövlət xəbər agentliyindən xəbərlər."
+        },
+        {
+            title: `Trend.az - Azərbaycan Xəbərləri`,
+            url: "https://www.trend.az",
+            description: "Azərbaycan və dünya xəbərləri."
+        },
+        {
+            title: `Trendyol - ${query}`,
+            url: `https://www.trendyol.com/sr?q=${encodeURIComponent(query)}`,
+            description: "Trendyol-da məhsul axtarışı."
+        },
+        {
+            title: `Hepsiburada - ${query}`,
+            url: `https://www.hepsiburada.com/ara?q=${encodeURIComponent(query)}`,
+            description: "Hepsiburada-da məhsul axtarışı."
+        },
+        {
+            title: `Amazon - ${query}`,
+            url: `https://www.amazon.com/s?k=${encodeURIComponent(query)}`,
+            description: "Amazon-da məhsul axtarışı."
+        },
+        {
+            title: `AliExpress - ${query}`,
+            url: `https://www.aliexpress.com/wholesale?SearchText=${encodeURIComponent(query)}`,
+            description: "AliExpress-də məhsul axtarışı."
+        },
+        {
+            title: `Etsy - ${query}`,
+            url: `https://www.etsy.com/search?q=${encodeURIComponent(query)}`,
+            description: "Etsy-də əl işləri və unikal məhsullar axtarışı."
+        },
+        {
+            title: `eBay - ${query}`,
+            url: `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(query)}`,
+            description: "eBay-də məhsul axtarışı."
+        }
+    ];
+
+    // Nəticə siyahısını təmizləyirik
+    var resultList = document.getElementById("resultList");
+    resultList.innerHTML = ""; 
+
+    // Axtarış nəticələrini ekranda göstəririk
+    results.forEach(function(result) {
+        var listItem = document.createElement("li");
+
+        var title = document.createElement("a");
+        title.href = result.url;
+        title.target = "_blank";  // Yeni pəncərədə açmaq
+        title.textContent = result.title;
+
+        var description = document.createElement("p");
+        description.textContent = result.description;
+
+        // Axtarış sözünün nəticədə olub-olmamasını yoxlayırıq
+        if (result.title.toLowerCase().includes(query.toLowerCase())) {
+            title.classList.add("highlight");  // Mətni vurğulamaq
+        }
+
+        listItem.appendChild(title);
+        listItem.appendChild(description);
+        resultList.appendChild(listItem);
+    });
+});
+
+// Əgər səhifə yüklənərkən URL-də axtarış sorğusu varsa, axtarışı avtomatik yerinə yetirmək
+window.addEventListener('load', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var searchQuery = urlParams.get('search');
+    
+    if (searchQuery) {
+        document.getElementById("searchInput").value = searchQuery;
+        document.getElementById("searchForm").dispatchEvent(new Event("submit"));
+    }
+});
+
+    </script>
+    
+
+
+
+</body></html>
