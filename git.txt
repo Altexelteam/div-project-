@@ -81,3 +81,178 @@ D - Silinmiş fayllar
 
 HEAD -> master localımı göstarir
 origin/master serverimi göstərir
+
+
+pwd : Print working directory, çalışılan klasörün, root(kök) dizinden itibaren path(yol)’ini yazdırır.
+
+[train@10 ~]$ pwd
+/home/train
+ 
+
+ls : List, klasör içerisindeki dosyaları ve klasörleri listeler. Dosya ve klasörler farklı şekilde renklendirilir işletim sistemi tarafından.   
+
+ls -l : detaylı listeler (alfabetik) 
+ls -lt : detaylı listeler (tarihe göre sıralar)
+ 
+
+train@10 ~]$ ls
+data-generator  Downloads     Pictures             Templates
+datasets        IdeaProjects  Public               venvairflow
+Desktop         Music         PycharmProjects      venvspark
+ 
+
+mkdir : Make directory, dizin oluşturur. 
+
+[train@10 ~]$ mkdir miuul
+[train@10 ~]$ ls
+data-generator  Downloads     notebook.log     Templates 
+datasets        IdeaProjects  Pictures         venvairflow
+Desktop         miuul         Public           venvspark
+Documents       Music         PycharmProjects  Videos
+ 
+
+Touch : Dosya oluşturur. 
+
+[train@10 ~]$ touch miuul.txt
+[train@10 ~]$ ls
+data-generator  Downloads     Music         PycharmProjects      venvspark
+datasets        IdeaProjects  notebook.log  pyspark_output_data  Videos
+Desktop         miuul         Pictures      Templates
+Documents       miuul.txt     Public        venvairflow
+ 
+
+cd : Change directory, dizin(klasör) değiştirmek için kullanılır.
+
+cd ~ : home dizine dönmeyi sağlar  
+cd .. : önceki dizine dönmeyi sağlar 
+ 
+
+[train@10 ~]$ cd miuul
+[train@10 miuul]$ pwd
+/home/train/miuul
+ 
+
+clear : Terminali temizler.
+
+rm : Remove, silmek için kullanılır  
+
+rm filename : Dosya silmek için kullanılır. 
+
+rm -r dirname : Klasör silmek için kullanılır.
+
+ 
+
+[train@10 ~]$ rm miuul.txt
+[train@10 ~]$ ls
+data-generator  Downloads     notebook.log     pyspark_output_data  Videos
+datasets        IdeaProjects  Pictures         Templates
+Desktop         miuul         Public           venvairflow
+Documents       Music         PycharmProjects  venvspark
+miuul.txt dosyası silindi
+
+ 
+
+[train@10 ~]$ rm -r miuul
+[train@10 ~]$ ls
+data-generator  Downloads     Pictures             Templates
+datasets        IdeaProjects  Public               venvairflow
+Desktop         Music         PycharmProjects      venvspark
+Documents       notebook.log  pyspark_output_data  Videos
+miuul klasörü silindi
+
+ 
+
+history : Kullanılan komutları listeler.  
+
+history 10 : Son 10 komutu listeler. 
+
+[train@10 ~]$ history 10
+1020  rm miuul.txt
+1021  ls
+1022  rm miuul
+1023  clear
+1024  rm -r miuul
+1025  ls
+1026  alias ml=" echo \"merhaba dunya\""
+1027  ml
+1028  history 5
+1029  history 10
+ 
+
+alias : Uzun ve sık kullandığımız komutları kısaltmak için kullanılır. 
+
+[train@10 ~]$ alias ml=" echo \"merhaba dunya\""
+[train@10 ~]$ ml
+merhaba dunya
+ 
+
+cp : Copy, dosya/klasör kopyalamak için kullanılır, cp filename hedef klasör yolu şeklinde kullanılır.  
+cp -r : klasör dolu ise -r recursive kullanılır. 
+
+[train@10 ~]$ cp miuul.txt miuul/
+[train@10 ~]$ cd miuul
+[train@10 miuul]$ ls
+miuul.txt
+miuul.txt dosyası, miuul klasörüne taşındı. 
+
+ 
+
+mv : Move, dosya/klasör taşımak için kullanılır, mv filename hedef klasör yolu şeklinde kullanılır.  
+
+[train@10 ~]$ ls miuul2
+[train@10 ~]$ mv miuul.txt miuul2
+[train@10 ~]$ cd miuul2
+[train@10 miuul2]$ ls
+miuul.txt
+miuul2 klasörü oluşturulup, bu klasöre miuul.txt dosyası mv komutu ile taşındı. 
+
+ 
+
+head : Dosya ilk satırlarını gözlemlemek için kullanılır. Varsayılan olarak ilk 10 satırı getirir.
+
+[train@10 datasets]$ head -n 5 iris.csv 
+SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm,Species
+5.1,3.5,1.4,0.2,Iris-setosa
+4.9,3.0,1.4,0.2,Iris-setosa
+4.7,3.2,1.3,0.2,Iris-setosa
+4.6,3.1,1.5,0.2,Iris-setosa
+ 
+
+tail : Dosya son satırlarını gözlemlemek için kullanılır. Varsayılan olarak son 10 satırı getirir.
+
+[train@10 datasets]$ tail -n 5 iris.csv 
+6.7,3.0,5.2,2.3,Iris-virginica
+6.3,2.5,5.0,1.9,Iris-virginica
+6.5,3.0,5.2,2.0,Iris-virginica
+6.2,3.4,5.4,2.3,Iris-virginica
+5.9,3.0,5.1,1.8,Iris-virginica
+ 
+
+grep : Belirli bir kalıbı filtrelemek ve o kalıbı içeren tüm satırları görüntülemek için kullanılır. RegEx (düzenli ifadeler) kullanılarak da arama yapılabilir.   
+
+grep --help : grep komutunun kullanım seçenekleri hakkında bilgi verir. 
+grep -i : Büyük/küçük harf duyarlılığını kaldırarak arama yapar.
+grep -in : Ek olarak bulunan ifadenin hangi satırda olduğunu da gösterir.
+ 
+
+[train@10 datasets]$ grep -i "vir" iris.csv
+6.3,3.3,6.0,2.5,Iris-virginica
+5.8,2.7,5.1,1.9,Iris-virginica
+7.1,3.0,5.9,2.1,Iris-virginica
+6.3,2.9,5.6,1.8,Iris-virginica
+6.5,3.0,5.8,2.2,Iris-virginica
+7.6,3.0,6.6,2.1,Iris-virginica
+Iris.csv dosyasında vir içeren satırlar filtrelendi
+
+ 
+
+[train@10 datasets]$ grep -i sa$ iris.csv
+5.1,3.5,1.4,0.2,Iris-setosa
+4.9,3.0,1.4,0.2,Iris-setosa
+4.7,3.2,1.3,0.2,Iris-setosa
+4.6,3.1,1.5,0.2,Iris-setosa
+5.0,3.6,1.4,0.2,Iris-setosa
+Iris.csv dosyasında sonu sa ile biten satırlar filtrelendi
+
+
+Linux işletim sistemi ile komutlarını ve daha fazlasını uygulamalı olarak öğrenmek için Data Engineer Path kariyer yolculuğu modüllerinden biri olan Bilişim Çalışanları için Temel Yetenekler eğitimini inceleyebilirsiniz.  
