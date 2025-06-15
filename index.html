@@ -1,84 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
-<style>
-  body{background-color: aqua;}
-  
-.mysuperman {
-  
-  padding: 30px;
-    width: 70%;
-    border: 2px dashed  plum ; 
-}
-
-.mysuperman table {
-    border: 1px solid #dededf;
-    height: 100%;
-    width: 100%;
-    table-layout: fixed;
-
-    text-align: left;
-}
-
-.mysuperman caption {
-
-    text-align: left;
-}
-
-.mysuperman th {
-    border: 1px solid #e881ce;
-    background-color: #d286e7;
-    color: #000000;
-    padding: 5px;
-}
-
-.mysuperman td {
-    border: 1px solid #dededf;
-    background-color:#d286e7;
-    color: #000000;
-    padding: 5px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dadlı Restoran</title>
+  <style>
+      img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .header {
+      background-color: red;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .header a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .section {
+      padding: 20px;
+    }
+    .item {
+      background-color: #f8f8f8;
+      padding: 10px;
+      margin: 10px 0;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      border-radius: 8px;
+    }
+    .item img {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+    }
+    footer{
+      text-align: center;
+      background-color: black;
+      color: white;
+      width: 100%;
+      height: 100;
+      margin: 60;
+    }
+  </style>
 </head>
 <body>
-<center> 
-<div class="mysuperman" >
-<table>
-   🍎Meyvələr Cədvəli
-    <thead>
-      <tr>
-        <th>  <center>Meyvə   </center>   </th>
-        <th><center>Rəngi</center></th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Alma</td>
-            <td>Qırmızı</td>
-        </tr>
-        <tr>
-            <td>Banan</td>
-            <td>Sarı</td>
-        </tr>
-        <tr>
-            <td>Üzüm</td>
-            <td>Bənövşəyi</td>
-        </tr>
-    </tbody>
-</table>
-<center>😸Sevimli Heyvanlar Siyahısı</center>
-<div class="animal-list">
-  <ul>
-    <li>Pişik</li>
-    <li>İt</li>
-    <li>Dovşan</li>
-    <li>Qarğa</li>
-  </ul>
-</div>
-</center>
 
-
+<div class="header">
+  <img src="https://img.freepik.com/premium-vector/restaurant-logo-design_636083-178.jpg" width="90" height="90" alt="Logo">
+  <h2>Dadlı Restoran</h2>
+  <a href="#morning">Səhər yeməkləri</a>
+  <a href="#main">Əsas yeməklər</a>
+  <a href="#drinks">İçkilər</a>
+  <a href="#desserts">Desertlər</a>
 </div>
 
+<div id="morning" class="section">
+  <h2>Səhər yeməkləri</h2>
+
+  <div class="item">
+    <img src="https://i.lezzet.com.tr/images-xxlarge-recipe/super_omlet-62382004-57c2-4826-ae52-1e95bc8f1074.jpg" alt="Omlet">
+    <div>
+      <h3>Omlet</h3>
+      <p>Təzə yumurtadan hazırlanmış omlet. 4.50 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://hips.hearstapps.com/hmg-prod/images/best-homemade-pancakes-index-640775a2dbad8.jpg?crop=0.8890503582601677xw:1xh;center,top&resize=1200:*" alt="Pancake">
+    <div>
+      <h3>Pancake</h3>
+      <p>Bal və meyvələrlə servis olunur. 5.00 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyzhqNKjyINFf3YMBJszzoYpGyrfXjfpBY2g&s" alt="Zeytun və Pendir">
+    <div>
+      <h3>Zeytun və Pendir</h3>
+      <p>Azərbaycan mətbəxinə uyğun səhər menyusu. 3.80 AZN</p>
+    </div>
+  </div>
+</div>
+
+<div id="main" class="section">
+  <h2>Əsas yeməklər</h2>
+
+  <div class="item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Az%C9%99rbaycan_dolmas%C4%B1.jpg/1200px-Az%C9%99rbaycan_dolmas%C4%B1.jpg" alt="Yarpaq Dolması">
+    <div>
+      <h3>Yarpaq Dolması</h3>
+      <p>Ənənəvi dolma, qatıqla servis olunur. 7.00 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Shashlik.jpg/1200px-Shashlik.jpg" alt="Tikə Kabab">
+    <div>
+      <h3>Tikə Kabab</h3>
+      <p>Ət sevərlərin sevimlisi. 9.00 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Shah-plow_azerbaijani.JPG/1200px-Shah-plow_azerbaijani.JPG" alt="Şah Plov">
+    <div>
+      <h3>Şah Plov</h3>
+      <p>Şah süfrəsinin bəzəyi. 10.00 AZN</p>
+    </div>
+  </div>
+</div>
+
+<div id="drinks" class="section">
+  <h2>İçkilər</h2>
+
+  <div class="item">
+    <img src="https://kirikoklava.com/wp-content/uploads/2018/03/kcay.jpg" alt="Çay">
+    <div>
+      <h3>Çay</h3>
+      <p>Qara çay, limonla birlikdə. 1.50 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://coffee.az/wp-content/uploads/2022/11/turk-qehvesi-3-edited.jpg" alt="Türk Qəhvəsi">
+    <div>
+      <h3>Türk Qəhvəsi</h3>
+      <p>Güclü və aromatik dad. 2.50 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://www.foodinfo.az/uploads/photos/original/2023/6/201873332164992b4d92616.png" alt="Təzə sıxılmış şirə">
+    <div>
+      <h3>Təzə sıxılmış şirə</h3>
+      <p>Portağal, alma və ya kök. 3.00 AZN</p>
+    </div>
+  </div>
+</div>
+
+<div id="desserts" class="section">
+  <h2>Desertlər</h2>
+
+  <div class="item">
+    <img src="https://qlutensiz.schaer.com/wp-content/uploads/sites/21/WhatsApp-Image-2024-03-05-at-20.32.06.jpeg" alt="Paxlava">
+    <div>
+      <h3>Paxlava</h3>
+      <p>Şirin qat-qat xəmir deserti. 3.50 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykIM5k9-5hj2L3OKkMT5coY4_wNGUpbILgw&s" alt="Dondurma">
+    <div>
+      <h3>Dondurma</h3>
+      <p>Soyuq və şirin yay ləzzəti. 2.50 AZN</p>
+    </div>
+  </div>
+
+  <div class="item">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj5BmYK4lNTGxKlnSpBvWjvwuogRC67LMC_w&s" alt="Şokoladlı Keks">
+    <div>
+      <h3>Şokoladlı Keks</h3>
+      <p>İçində şokolad parçaları ilə yumşaq keks. 4.00 AZN</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <p><i>Yaxşı yemək gözəl xatirələr yaradır.</i></p>
+  ©Dadlı Restoran.
+</footer>
 </body>
 </html>
