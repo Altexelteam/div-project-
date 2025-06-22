@@ -2,178 +2,198 @@
 <html lang="az">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dadlı Restoran</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookNest Kitab Mağazası</title>
   <style>
-      img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-    }
-    .header {
-      background-color: red;
-      color: white;
+    body {
+      font-family: Arial, sans-serif;
       padding: 20px;
-      text-align: center;
+      background-color: #f9f9f9;
     }
-    .header a {
-      margin: 0 10px;
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #3974ff;
       color: white;
-      text-decoration: none;
+      font-size: 32px;
       font-weight: bold;
     }
-    .section {
-      padding: 20px;
+    section {
+  
+      margin-top: 40px;
     }
-    .item {
-      background-color: #f8f8f8;
-      padding: 10px;
-      margin: 10px 0;
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      border-radius: 8px;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #fbfbfb;
     }
-    .item img {
-      width: 120px;
-      height: 120px;
-      border-radius: 8px;
+    .about {
+      font-size: 18px;
+      line-height: 1.6;
     }
-    footer{
-      text-align: center;
-      background-color: black;
-      color: white;
+    table {
       width: 100%;
-      height: 100;
-      margin: 60;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    .contact-form label {
+      display: block;
+      margin-top: 15px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #766ce5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333333; 
+}
+   .section {
+      align-items: center;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin: 15px;
+      max-width: 250px;
+      text-align: center;
+    }
+
+    .section img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .section h4 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .section p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .section .price {
+      font-weight: bold;
+      color: #27ae60;
+    }
+  .section-title {
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 26px;
+      color: #2c3e50;
+    }
+    a{
+        text-align: center;
+        text-decoration: none;
+     
     }
   </style>
 </head>
 <body>
+  <header>
+    BookNest Kitab Mağazası
+  </header>
+<center>  <nav>
+    <a href="#haqqimizda">haqimizda</a>
+    <a href="#yenikitablar">yenikitablar</a>
+    <a href="#janrlar">janrlar</a>
+    <a href="#elaqe">elaqe</a>
+  </nav></center>
 
-<div class="header">
-  <img src="https://img.freepik.com/premium-vector/restaurant-logo-design_636083-178.jpg" width="90" height="90" alt="Logo">
-  <h2>Dadlı Restoran</h2>
-  <a href="#morning">Səhər yeməkləri</a>
-  <a href="#main">Əsas yeməklər</a>
-  <a href="#drinks">İçkilər</a>
-  <a href="#desserts">Desertlər</a>
-</div>
+  <section id="haqqimizda">
+    <h2>Haqqımızda</h2>
+    <p class="about">
+      BookNest olaraq məqsədimiz oxuculara ən yaxşı kitabları təqdim etməkdir.
+      Müxtəlif janrlarda zəngin kitab kolleksiyamızla xidmətinizdəyik.
+    </p>
+  </section>
 
-<div id="morning" class="section">
-  <h2>Səhər yeməkləri</h2>
-
-  <div class="item">
-    <img src="https://i.lezzet.com.tr/images-xxlarge-recipe/super_omlet-62382004-57c2-4826-ae52-1e95bc8f1074.jpg" alt="Omlet">
-    <div>
-      <h3>Omlet</h3>
-      <p>Təzə yumurtadan hazırlanmış omlet. 4.50 AZN</p>
+<center>
+    <section id="yenikitablar">
+    <h2>Yeni Kitablar</h2>
+     <div id="newbook">
+    <div class="section">
+      <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg" alt="Kitab 1">
+      <h4>Əli və Nino</h4>
+      <p>Müəllif: Qurban Səid</p>
+      <p class="price">₼12.00</p>
+      <p>"Qafqaz sevgisinin dastanı"</p>
     </div>
-  </div>
 
-  <div class="item">
-    <img src="https://hips.hearstapps.com/hmg-prod/images/best-homemade-pancakes-index-640775a2dbad8.jpg?crop=0.8890503582601677xw:1xh;center,top&resize=1200:*" alt="Pancake">
-    <div>
-      <h3>Pancake</h3>
-      <p>Bal və meyvələrlə servis olunur. 5.00 AZN</p>
+    <div class="section">
+      <img src="https://covers.openlibrary.org/b/id/8770705-L.jpg" alt="Kitab 2">
+      <h4>1984</h4>
+      <p>Müəllif: George Orwell</p>
+      <p class="price">₼10.50</p>
+      <p>"Distopik bir gələcək"</p>
     </div>
-  </div>
 
-  <div class="item">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyzhqNKjyINFf3YMBJszzoYpGyrfXjfpBY2g&s" alt="Zeytun və Pendir">
-    <div>
-      <h3>Zeytun və Pendir</h3>
-      <p>Azərbaycan mətbəxinə uyğun səhər menyusu. 3.80 AZN</p>
-    </div>
-  </div>
-</div>
+    <div class="section">
+      <img src="https://covers.openlibrary.org/b/id/11122802-L.jpg" alt="Kitab 3">
+      <h4>Kimyaçı</h4>
+      <p>Müəllif: Paulo Coelho</p>
+      <p class="price">₼14.90</p>
+  </section>
+</center>
 
-<div id="main" class="section">
-  <h2>Əsas yeməklər</h2>
+  <section id="janrlar">
+    <h2>Janrlar</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Janr</th>
+          <th>Təsviri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Roman</td><td>Həyat hekayələri və emosional dərinlik.</td></tr>
+        <tr><td>Detektiv</td><td>Sirli hadisələr və araşdırmalar.</td></tr>
+        <tr><td>Psixologiya</td><td>İnsan psixikasını izah edən kitablar.</td></tr>
+        <tr><td>Fəlsəfə</td><td>Düşüncə və həyatın mənasını araşdıran əsərlər.</td></tr>
+        <tr><td>Bioqrafiya</td><td>Əhəmiyyətli şəxslərin həyat hekayələri.</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-  <div class="item">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Az%C9%99rbaycan_dolmas%C4%B1.jpg/1200px-Az%C9%99rbaycan_dolmas%C4%B1.jpg" alt="Yarpaq Dolması">
-    <div>
-      <h3>Yarpaq Dolması</h3>
-      <p>Ənənəvi dolma, qatıqla servis olunur. 7.00 AZN</p>
-    </div>
-  </div>
+  <section id="elaqe">
+    <h2>Əlaqə</h2>
+    <form class="contact-form">
+      <label for="name">Ad:
+        <input type="text" id="name" name="name">
+      </label>
+      <label for="email">Email:
+        <input type="email" id="email" name="email">
+      </label>
+      <label for="message">Mesaj:
+        <textarea id="message" name="message"></textarea>
+      </label>
+      <button type="submit">Göndər</button>
+    </form>
+  </section>
 
-  <div class="item">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Shashlik.jpg/1200px-Shashlik.jpg" alt="Tikə Kabab">
-    <div>
-      <h3>Tikə Kabab</h3>
-      <p>Ət sevərlərin sevimlisi. 9.00 AZN</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Shah-plow_azerbaijani.JPG/1200px-Shah-plow_azerbaijani.JPG" alt="Şah Plov">
-    <div>
-      <h3>Şah Plov</h3>
-      <p>Şah süfrəsinin bəzəyi. 10.00 AZN</p>
-    </div>
-  </div>
-</div>
-
-<div id="drinks" class="section">
-  <h2>İçkilər</h2>
-
-  <div class="item">
-    <img src="https://kirikoklava.com/wp-content/uploads/2018/03/kcay.jpg" alt="Çay">
-    <div>
-      <h3>Çay</h3>
-      <p>Qara çay, limonla birlikdə. 1.50 AZN</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <img src="https://coffee.az/wp-content/uploads/2022/11/turk-qehvesi-3-edited.jpg" alt="Türk Qəhvəsi">
-    <div>
-      <h3>Türk Qəhvəsi</h3>
-      <p>Güclü və aromatik dad. 2.50 AZN</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <img src="https://www.foodinfo.az/uploads/photos/original/2023/6/201873332164992b4d92616.png" alt="Təzə sıxılmış şirə">
-    <div>
-      <h3>Təzə sıxılmış şirə</h3>
-      <p>Portağal, alma və ya kök. 3.00 AZN</p>
-    </div>
-  </div>
-</div>
-
-<div id="desserts" class="section">
-  <h2>Desertlər</h2>
-
-  <div class="item">
-    <img src="https://qlutensiz.schaer.com/wp-content/uploads/sites/21/WhatsApp-Image-2024-03-05-at-20.32.06.jpeg" alt="Paxlava">
-    <div>
-      <h3>Paxlava</h3>
-      <p>Şirin qat-qat xəmir deserti. 3.50 AZN</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykIM5k9-5hj2L3OKkMT5coY4_wNGUpbILgw&s" alt="Dondurma">
-    <div>
-      <h3>Dondurma</h3>
-      <p>Soyuq və şirin yay ləzzəti. 2.50 AZN</p>
-    </div>
-  </div>
-
-  <div class="item">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj5BmYK4lNTGxKlnSpBvWjvwuogRC67LMC_w&s" alt="Şokoladlı Keks">
-    <div>
-      <h3>Şokoladlı Keks</h3>
-      <p>İçində şokolad parçaları ilə yumşaq keks. 4.00 AZN</p>
-    </div>
-  </div>
-</div>
-<footer>
-  <p><i>Yaxşı yemək gözəl xatirələr yaradır.</i></p>
-  ©Dadlı Restoran.
-</footer>
 </body>
 </html>
